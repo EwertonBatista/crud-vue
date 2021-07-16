@@ -1,43 +1,31 @@
 <template>
-  <div id="app">
-    <h1>Preencha as informações abaixo</h1>
-
-      <CreateUser/>
-      <hr>
-      <ReadUser/>
-  </div>
+    
+    <div>
+    <div class="jumbotron">
+        <h1 class="display-4 owntitle">Crud Vue</h1>
+        <p class="lead ownstyle">formulário de cadastro</p>
+        <hr class="my-4">
+    </div>
+        <Main/>
+    </div>
 </template>
 
 <script>
-import {eventBus} from './main'
-import CreateUser from './components/CreateUser.vue'
-import ReadUser from './components/ReadUser.vue'
-
+import Main from './components/Main.vue'
 
 export default {
-  components: {
-    CreateUser,
-    ReadUser
-  },
-  data(){
-    return {
-      dados: {
-        type: Object
-      }
+    components: {
+        Main
     }
-  },
-  created(){
-    eventBus.$on('salvar', (dados) => {
-      this.dados = dados
-    })
-  }
 }
 </script>
 
 <style scoped>
-  #app {
-    width: 960px;
-    margin: 0 auto;
-    border: 1px solid blue;
-  }
+    .ownstyle{
+        margin-left: 50px;
+    }
+    .owntitle {
+        font-size: 30px;
+    }
+    
 </style>
